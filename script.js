@@ -8,14 +8,13 @@ const letterLowChk = document.querySelector('#pass-lows');
 const letterCapChk = document.querySelector('#pass-caps');
 const symbolChk = document.querySelector('#pass-symbs');
 
-const passLetters = 'abcdefghijklmnopqrstuvwxyz';
+
 const passLetters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z', ];
 const passLettersCaps = passLetters.map(x => x.toUpperCase());
 console.log(passLetters);
 console.log(passLettersCaps);
 const passNumbs = ['1','2','3','4','5','6','7','8','9','0',]
 const passSymbs = ['!','@','#','$','%','^','&','*','(',')','[',']','{','}','-','_','=','+',';',':','<','>',',','.','/','?',`'`,`"`,];
-
 const charArray = [];
 
 // Write password to the #password input
@@ -28,6 +27,12 @@ function writePassword() {
 }
 
 var generatePassword = () => {
+  let passArray = [];
+  // let charString = charArray.join('');
+  let charString = charArray.map(x => x.join('')).join('');
+  for (let i = 0; i < charLngth.value; i++) {
+    passArray.push(charString[Math.floor(Math.random() * charString.length)]);
+  }
   return passArray.join('');
 }
 
