@@ -23,6 +23,18 @@
             placeholder="Your Secure Password"
             aria-label="Generated Password"
           ></textarea>
+          <div id="input-cont" class="input-hidden">
+            <h4>What types of charcters do you want?</h4>
+            <ul>
+              <li>What length should your password be? (8 and 128 characters.) <input type="number"
+                  type="number" value="8" min="8" max="128" id="char-length"></li>
+              <li>Would you like lowercase letters?<input type="checkbox" name="lows" id="pass-lows"></li>
+              <li>Would you like capital letters?<input type="checkbox" name="caps" id="pass-caps"></li>
+              <li>Would you like numbers? (1, 2, 3, 4, etc.)<input type="checkbox" name="numbs" id="pass-numbs"></li>
+              <li>Finally, would you like symbols? (@, #, *, !, %, etc.)<input type="checkbox" name="symbs"
+                  id="pass-symbs"></li>
+            </ul>
+          </div>
         </div>
         <div class="card-footer">
           <button id="generate" class="btn">Generate Password</button>
